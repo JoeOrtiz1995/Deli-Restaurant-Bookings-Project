@@ -6,3 +6,9 @@ class Event(models.Model):
     description = models.TextField()
     start_date = models.DateTimeField()
     duration = models.DurationField()
+
+    class Meta:
+        ordering = ["-start_date"]
+
+    def __str__(self):
+        return f"{self.title}, starting {self.start_date}"
