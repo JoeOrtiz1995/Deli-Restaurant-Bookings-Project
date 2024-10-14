@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Event
 
 # Create your views here.
-def my_agenda(request):
-    return HttpResponse("Hello, I'll be the events page!")
+class EventList(generic.ListView):
+    queryset = Event.objects.all()
+    template_name = "event_list.html"
