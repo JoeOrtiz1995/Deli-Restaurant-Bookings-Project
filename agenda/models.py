@@ -5,7 +5,6 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_date = models.DateTimeField()
-    duration = models.DurationField()
 
     class Meta:
         ordering = ["-start_date"]
