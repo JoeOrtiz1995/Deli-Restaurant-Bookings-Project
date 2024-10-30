@@ -15,7 +15,8 @@ class BookingRequest(models.Model):
     time_request = models.TimeField(auto_now_add=False)
     guests = models.IntegerField()
     email = models.EmailField()
-    message = models.TextField(blank=True)
+    message = models.TextField()
+    read = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Booking Request from: {self.full_name}"

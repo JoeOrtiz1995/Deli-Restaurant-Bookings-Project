@@ -15,13 +15,13 @@ def about_us(request):
             messages.add_message(request, messages.SUCCESS, 
                                  "Booking request received!")
 
-    contact = About.objects.all().last()
+    about = About.objects.all().last()
     booking_form = BookingForm()
 
     return render(
         request, 
         "contact/contact.html",
-        {"contact": contact,
-         "booking_form": booking_form
+        {"about": about,
+         "booking_form": booking_form,
          },
     )
